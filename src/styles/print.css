@@ -1,0 +1,141 @@
+/* PDF导出专用打印样式表 */
+
+/* 强制背景色打印 */
+* {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* 页面设置 */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+/* 打印时隐藏不需要的元素 */
+@media print {
+  /* 隐藏按钮和导航 */
+  button,
+  nav,
+  [role="navigation"],
+  .no-print {
+    display: none !important;
+  }
+
+  /* 移除所有圆角和阴影 */
+  * {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* 页面容器 */
+  body {
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  /* 报告section - 每个section一页 */
+  section {
+    page-break-after: always;
+    page-break-inside: avoid;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* 最后一个section不需要分页符 */
+  section:last-child {
+    page-break-after: auto;
+  }
+
+  /* 表格分页控制 */
+  table {
+    page-break-inside: auto;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  td,
+  th {
+    page-break-inside: avoid;
+  }
+
+  /* 图表容器 */
+  .chart-container,
+  .recharts-wrapper {
+    page-break-inside: avoid;
+  }
+
+  /* 避免元素被分割 */
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* 页眉（每页重复） */
+  @page {
+    @top-center {
+      content: "儿童身高发育管理测评报告";
+      font-size: 10pt;
+      color: #2A5C8E;
+    }
+  }
+
+  /* 字体优化 */
+  body,
+  div,
+  span,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  table,
+  td,
+  th {
+    font-family: "PingFang SC", "Microsoft YaHei", "SimSun", sans-serif !important;
+  }
+
+  /* 图像优化 */
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  /* 链接处理 */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+/* PDF导出特定样式 */
+@media screen {
+  .print-only {
+    display: none;
+  }
+}
+
+/* 页码样式（通过JavaScript动态添加） */
+.page-number {
+  position: fixed;
+  bottom: 10mm;
+  right: 10mm;
+  font-size: 10pt;
+  color: #666;
+}

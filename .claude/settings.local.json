@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh pr list:*)",
+      "Bash(python:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm ts-check:*)",
+      "Bash(pnpm dev)",
+      "Bash(dir \"C:\\\\Windows\\\\Fonts\\\\sim*\")",
+      "Bash(dir \"C:\\\\Windows\\\\Fonts\\\\msyh*\")",
+      "Bash(dir \"C:\\\\Windows\\\\Fonts\\\\Deng*\")",
+      "Bash(npx tsc:*)",
+      "Bash(curl -s -o C:UsersAdministratorDesktoptest_output.zip -w \"%{http_code}\" -X POST http://localhost:5000/api/batch/export -H \"Content-Type: application/json\" -d \"{\"\"reports\"\":[{\"\"reportId\"\":\"\"TEST-001\"\",\"\"childName\"\":\"\"测试儿童\"\",\"\"gender\"\":\"\"male\"\",\"\"birthDate\"\":\"\"2015-06-15\"\",\"\"assessmentDate\"\":\"\"2026-02-05\"\",\"\"currentHeight\"\":125,\"\"currentWeight\"\":25,\"\"fatherHeight\"\":175,\"\"motherHeight\"\":162,\"\"gestationalWeeks\"\":39,\"\"annualHeightGrowth\"\":5,\"\"growthRecords\"\":[{\"\"ageYears\"\":10,\"\"ageMonths\"\":0,\"\"height\"\":125,\"\"weight\"\":25}],\"\"healthFactors\"\":{\"\"mainIssues\"\":[\"\"挑食\"\",\"\"晚睡\"\"],\"\"parentWillingness\"\":\"\"high\"\",\"\"sleep\"\":{\"\"idealSleepTime\"\":\"\"9-10小时\"\",\"\"gapAnalysis\"\":\"\"建议提前入睡时间\"\"},\"\"nutrition\"\":{\"\"idealStandard\"\":\"\"均衡饮食\"\",\"\"gapAnalysis\"\":\"\"增加蛋白质摄入\"\"},\"\"exercise\"\":{\"\"idealStandard\"\":\"\"每日1小时\"\",\"\"gapAnalysis\"\":\"\"增加户外运动\"\"},\"\"emotion\"\":{\"\"idealStandard\"\":\"\"积极乐观\"\",\"\"gapAnalysis\"\":\"\"保持良好心态\"\"}},\"\"conclusion\"\":{\"\"overallRating\"\":\"\"B\"\",\"\"currentPercentile\"\":\"\"P50\"\",\"\"geneticPotentialGap\"\":5,\"\"predictedAdultHeight\"\":172,\"\"predictedHeightRange\"\":{\"\"min\"\":169,\"\"max\"\":175},\"\"riskFactors\"\":[\"\"挑食\"\",\"\"晚睡\"\"]},\"\"organization\"\":{\"\"name\"\":\"\"儿童健康管理中心\"\",\"\"logo\"\":\"\"\"\",\"\"contact\"\":\"\"400-000-0000\"\"}}]}\")",
+      "Bash(powershell -Command \"Get-Item ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\test_output.zip'' | Select-Object Length\")",
+      "Bash(dir C:UsersAdministratorDesktoptest_output.zip)",
+      "Bash(curl -s -o test_output.zip -w \"%{http_code}\" -X POST http://localhost:5000/api/batch/export -H \"Content-Type: application/json\" -d \"{\"\"reports\"\":[{\"\"reportId\"\":\"\"TEST-001\"\",\"\"childName\"\":\"\"测试儿童\"\",\"\"gender\"\":\"\"male\"\",\"\"birthDate\"\":\"\"2015-06-15\"\",\"\"assessmentDate\"\":\"\"2026-02-05\"\",\"\"currentHeight\"\":125,\"\"currentWeight\"\":25,\"\"fatherHeight\"\":175,\"\"motherHeight\"\":162,\"\"gestationalWeeks\"\":39,\"\"annualHeightGrowth\"\":5,\"\"growthRecords\"\":[{\"\"ageYears\"\":10,\"\"ageMonths\"\":0,\"\"height\"\":125,\"\"weight\"\":25}],\"\"healthFactors\"\":{\"\"mainIssues\"\":[\"\"挑食\"\",\"\"晚睡\"\"],\"\"parentWillingness\"\":\"\"high\"\",\"\"sleep\"\":{\"\"idealSleepTime\"\":\"\"9-10小时\"\",\"\"gapAnalysis\"\":\"\"建议提前入睡时间\"\"},\"\"nutrition\"\":{\"\"idealStandard\"\":\"\"均衡饮食\"\",\"\"gapAnalysis\"\":\"\"增加蛋白质摄入\"\"},\"\"exercise\"\":{\"\"idealStandard\"\":\"\"每日1小时\"\",\"\"gapAnalysis\"\":\"\"增加户外运动\"\"},\"\"emotion\"\":{\"\"idealStandard\"\":\"\"积极乐观\"\",\"\"gapAnalysis\"\":\"\"保持良好心态\"\"}},\"\"conclusion\"\":{\"\"overallRating\"\":\"\"B\"\",\"\"currentPercentile\"\":\"\"P50\"\",\"\"geneticPotentialGap\"\":5,\"\"predictedAdultHeight\"\":172,\"\"predictedHeightRange\"\":{\"\"min\"\":169,\"\"max\"\":175},\"\"riskFactors\"\":[\"\"挑食\"\",\"\"晚睡\"\"]},\"\"organization\"\":{\"\"name\"\":\"\"儿童健康管理中心\"\",\"\"logo\"\":\"\"\"\",\"\"contact\"\":\"\"400-000-0000\"\"}}]}\")",
+      "Bash(ls:*)",
+      "Bash(powershell -Command \"Get-ChildItem ''test_extract'' | Select-Object Name, Length\")",
+      "Bash(where:*)",
+      "Bash(where \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\")",
+      "Bash(dir \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\")",
+      "Bash(dir \"C:\\\\Program Files \\(x86\\)\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\")",
+      "Bash(findstr:*)",
+      "Bash(wmic os get:*)",
+      "Bash(systeminfo:*)",
+      "Bash(wmic computersystem get:*)",
+      "Bash(pnpm remove:*)",
+      "WebSearch",
+      "Bash(pnpm build:*)",
+      "Bash(tasklist:*)",
+      "Bash(netstat:*)",
+      "Bash(taskkill:*)",
+      "Bash(cmd //c \"taskkill /PID 21948 /F\")",
+      "Bash(cmd //c \"\"\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\"\" --version\")",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless --no-sandbox --disable-gpu --dump-dom about:blank)",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --version)",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless --no-sandbox --disable-gpu --user-data-dir=\"C:/tmp/puppeteer-chrome\" --dump-dom about:blank)",
+      "Bash(curl:*)"
+    ]
+  }
+}
