@@ -29,12 +29,13 @@ export default function SubmitFormPage() {
     gender: 'male',
     fatherHeight: '',
     motherHeight: '',
-   半年HeightGrowth: '',
+    半年HeightGrowth: '',
     mainIssues: [] as string[],
     willingness: 'high',
     gestationalWeeks: '',
     assessmentDate: new Date().toISOString().split('T')[0],
     doctorAdvice: '',
+    healthManager: '',
   });
 
   const handleInputChange = (field: string, value: string) => {
@@ -165,6 +166,7 @@ export default function SubmitFormPage() {
       birthDate: formData.birthDate,
       assessmentDate: formData.assessmentDate,
       reportId,
+      healthManager: formData.healthManager || undefined,
       currentHeight: height,
       currentWeight: weight,
       fatherHeight,
@@ -478,6 +480,20 @@ export default function SubmitFormPage() {
                   placeholder="如有医生建议请在此填写..."
                   rows={3}
                 />
+              </div>
+
+              <Separator />
+
+              {/* 健康管理师 */}
+              <div className="space-y-2">
+                <Label htmlFor="healthManager">健康管理师</Label>
+                <Input
+                  id="healthManager"
+                  value={formData.healthManager}
+                  onChange={(e) => handleInputChange('healthManager', e.target.value)}
+                  placeholder="请输入健康管理师姓名（可选）"
+                />
+                <p className="text-xs text-gray-500">填写后将显示在报告处方单上</p>
               </div>
 
               {/* 提交按钮 */}

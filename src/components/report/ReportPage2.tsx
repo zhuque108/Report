@@ -2,7 +2,7 @@
 
 import { ReportData, calculateAge, getGrowthRateStatus } from '@/types/report';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceArea, ReferenceLine } from 'recharts';
-import { TrendingUp, ArrowUp } from 'lucide-react';
+import { TrendingUp, ArrowUp, Database, FileCheck, Stethoscope } from 'lucide-react';
 
 interface ReportPage2Props {
   data: ReportData;
@@ -199,10 +199,10 @@ export default function ReportPage2({ data }: ReportPage2Props) {
       </div>
 
       {/* 体重生长曲线（小图） */}
-      <div className="mb-6">
+      <div className="mb-3">
         <h3 className="mb-3 text-lg font-semibold text-gray-800">体重生长曲线</h3>
         <div className="rounded-xl border-2 p-4" style={{ borderColor: '#E8F4F8' }}>
-          <ResponsiveContainer width="100%" height={200}>
+          <ResponsiveContainer width="100%" height={160}>
             <LineChart data={weightChartData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#E0E0E0" />
               <XAxis dataKey="age" tick={{ fontSize: 11 }} />
@@ -227,7 +227,7 @@ export default function ReportPage2({ data }: ReportPage2Props) {
       </div>
 
       {/* 关键解读 */}
-      <div className="grid grid-cols-3 gap-4 rounded-xl border-2 p-6" style={{ borderColor: '#FFA726' }}>
+      <div className="grid grid-cols-3 gap-4 rounded-xl border-2 p-5" style={{ borderColor: '#FFA726' }}>
         <div className="text-center">
           <div className="mb-2 text-sm text-gray-500">当前水平</div>
           <div className="text-2xl font-bold" style={{ color: '#2A5C8E' }}>
@@ -269,8 +269,30 @@ export default function ReportPage2({ data }: ReportPage2Props) {
         </div>
       </div>
 
+      {/* 数据来源说明 - 放在页脚上方 */}
+      <div className="mt-3 rounded-lg border-l-4 p-2" style={{ borderColor: '#2A5C8E', backgroundColor: '#F8FBFD' }}>
+        <div className="flex items-center gap-2 mb-1">
+          <Database className="h-3 w-3" style={{ color: '#2A5C8E' }} />
+          <span className="text-xs font-semibold" style={{ color: '#2A5C8E' }}>数据来源与评估依据</span>
+        </div>
+        <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-gray-600">
+          <div className="flex items-center gap-1">
+            <FileCheck className="h-3 w-3" style={{ color: '#FFA726' }} />
+            <span>WHO儿童生长标准</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <Stethoscope className="h-3 w-3" style={{ color: '#FFA726' }} />
+            <span>儿科临床营养学共识</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <Database className="h-3 w-3" style={{ color: '#FFA726' }} />
+            <span>Y-CAS临床评估系统</span>
+          </div>
+        </div>
+      </div>
+
       {/* 页脚 */}
-      <div className="absolute bottom-6 left-12 right-12 flex justify-between text-xs text-gray-400">
+      <div className="absolute bottom-4 left-12 right-12 flex justify-between text-xs text-gray-400">
         <span>第 3 页</span>
         <span>共 6 页</span>
       </div>

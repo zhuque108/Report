@@ -8,6 +8,9 @@ export interface ReportData {
   assessmentDate: string; // YYYY-MM-DD
   reportId: string;
 
+  // 管理师信息
+  healthManager?: string; // 健康管理师姓名
+
   // 当前体征
   currentHeight: number; // cm
   currentWeight: number; // kg

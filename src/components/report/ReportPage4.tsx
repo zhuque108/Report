@@ -1,5 +1,5 @@
 import { ReportData, generatePersonalizedAdvice } from '@/types/report';
-import { ClipboardCheck, FileText, Apple, Moon, Activity, Stethoscope } from 'lucide-react';
+import { ClipboardCheck, FileText, Apple, Moon, Activity, Stethoscope, Building2, Award, UserCheck } from 'lucide-react';
 
 interface ReportPage4Props {
   data: ReportData;
@@ -158,6 +158,24 @@ export default function ReportPage4({ data }: ReportPage4Props) {
 
         {/* 右侧：身高管理处方 */}
         <div className="rounded-xl border-2 p-6" style={{ borderColor: '#2A5C8E', backgroundColor: '#FAFAFA' }}>
+          {/* 处方单抬头资质 */}
+          <div className="mb-4 rounded-lg border-b-2 pb-3" style={{ borderColor: '#E8F4F8' }}>
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <Building2 className="h-4 w-4" style={{ color: '#2A5C8E' }} />
+                <span className="text-sm font-bold" style={{ color: '#2A5C8E' }}>益康顺儿童健康成长管理中心</span>
+              </div>
+              <div className="flex items-center gap-1 px-2 py-1 rounded text-xs" style={{ backgroundColor: '#FFF3E0', color: '#FFA726' }}>
+                <Award className="h-3 w-3" />
+                <span>西南儿童医院"医育结合"战略合作机构</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 text-xs text-gray-600">
+               <UserCheck className="h-3 w-3" style={{ color: '#2A5C8E' }} />
+               <span>管理师：<strong style={{ color: '#2A5C8E' }}>{data.healthManager || '未指定'}</strong>（国家注册健康管理师）</span>
+             </div>
+          </div>
+          
           <div className="mb-4 flex items-center justify-between">
             <h3 className="text-xl font-bold flex items-center" style={{ color: '#2A5C8E' }}>
               <FileText className="mr-2 h-6 w-6" />

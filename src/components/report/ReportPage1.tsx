@@ -1,5 +1,5 @@
 import { ReportData, calculateAge, calculateBMI, getBMIStatus, calculateGeneticHeight, isPremature } from '@/types/report';
-import { User, Ruler, Weight, Activity } from 'lucide-react';
+import { User, Ruler, Weight, Activity, Building2, Award, ClipboardCheck, ShieldCheck, Stethoscope } from 'lucide-react';
 
 interface ReportPage1Props {
   data: ReportData;
@@ -23,22 +23,53 @@ export default function ReportPage1({ data }: ReportPage1Props) {
       </div>
 
       {/* 中间信息区块 */}
-      <div className="mb-8">
-        <div className="rounded-xl bg-white p-8 shadow-lg border-2 text-center" style={{ borderColor: '#E8F4F8' }}>
-          <div className="mb-4">
-            <h3 className="text-2xl font-semibold text-gray-700">专业测评 · 科学管理</h3>
-          </div>
-          <div className="grid grid-cols-2 gap-6">
-            <div>
-              <div className="text-sm text-gray-500 mb-2">测评日期</div>
-              <div className="text-2xl font-bold" style={{ color: '#2A5C8E' }}>
-                {data.assessmentDate}
+      <div className="mb-6">
+        <div className="rounded-xl bg-white p-6 shadow-lg border-2" style={{ borderColor: '#E8F4F8' }}>
+          <div className="grid grid-cols-5 gap-6">
+            {/* 左侧：测评信息 */}
+            <div className="col-span-3">
+              <div className="mb-4">
+                <h3 className="text-2xl font-semibold text-gray-700">专业测评 · 科学管理</h3>
+              </div>
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <div className="text-sm text-gray-500 mb-2">测评日期</div>
+                  <div className="text-2xl font-bold" style={{ color: '#2A5C8E' }}>
+                    {data.assessmentDate}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-gray-500 mb-2">报告编号</div>
+                  <div className="text-2xl font-bold" style={{ color: '#FFA726' }}>
+                    {data.reportId}
+                  </div>
+                </div>
               </div>
             </div>
-            <div>
-              <div className="text-sm text-gray-500 mb-2">报告编号</div>
-              <div className="text-2xl font-bold" style={{ color: '#FFA726' }}>
-                {data.reportId}
+            
+            {/* 右侧：专业资质认证卡片 */}
+            <div className="col-span-2 rounded-lg border-2 p-4" style={{ borderColor: '#FFA726', backgroundColor: '#FFFBF5' }}>
+              <div className="mb-3 flex items-center gap-2">
+                <Award className="h-5 w-5" style={{ color: '#FFA726' }} />
+                <span className="font-bold text-sm" style={{ color: '#2A5C8E' }}>专业资质保障</span>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="flex items-start gap-2">
+                  <Building2 className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#2A5C8E' }} />
+                  <span className="text-gray-700"><strong>医疗级学术支持：</strong>西南儿童医院"医育结合"战略合作</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Stethoscope className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#2A5C8E' }} />
+                  <span className="text-gray-700"><strong>持证服务团队：</strong>国家注册健康管理师/公共营养师</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <ClipboardCheck className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#2A5C8E' }} />
+                  <span className="text-gray-700"><strong>科学评估体系：</strong>Y-CAS临床评估系统与WHO生长标准</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <ShieldCheck className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#2A5C8E' }} />
+                  <span className="text-gray-700"><strong>医疗兜底权益：</strong>病理性异常信号→西南儿童医院确诊绿色通道</span>
+                </div>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { ReportData, generatePersonalizedAdvice } from '@/types/report';
-import { AlertCircle, Clock, Utensils, Dumbbell, Smile, Gauge } from 'lucide-react';
+import { AlertCircle, Clock, Utensils, Dumbbell, Smile, Gauge, ShieldAlert, Building2, Stethoscope } from 'lucide-react';
 
 interface ReportPage3Props {
   data: ReportData;
@@ -302,6 +302,28 @@ export default function ReportPage3({ data }: ReportPage3Props) {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* 服务边界声明 */}
+      <div className="mb-4 rounded-lg border-2 p-4" style={{ borderColor: '#E8F4F8', backgroundColor: '#FAFAFA' }}>
+        <div className="flex items-start gap-3">
+          <ShieldAlert className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: '#2A5C8E' }} />
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="font-bold text-sm" style={{ color: '#2A5C8E' }}>服务边界声明</span>
+            </div>
+            <p className="text-xs text-gray-600 leading-relaxed mb-2">
+              本报告为<strong>生活方式管理建议</strong>，非医疗诊断。益康顺严格恪守"非医疗"界限，专注"怎么吃、怎么睡、怎么动"的执行管理。
+            </p>
+            <div className="flex items-center gap-2 rounded-md px-3 py-2" style={{ backgroundColor: '#E8F4F8' }}>
+              <Building2 className="h-4 w-4" style={{ color: '#FFA726' }} />
+              <Stethoscope className="h-4 w-4" style={{ color: '#FFA726' }} />
+              <span className="text-xs text-gray-700">
+                针对监测到的病理性异常信号，启动<strong style={{ color: '#2A5C8E' }}>"西南儿童医院·确诊绿色通道"</strong>
+              </span>
+            </div>
           </div>
         </div>
       </div>
